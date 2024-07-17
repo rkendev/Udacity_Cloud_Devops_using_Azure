@@ -1,0 +1,116 @@
+C:\Users\Administrator\Documents\Software\Cloud_CLIs\packer\packer build -force server.json
+azure-arm: output will be in this color.
+
+==> azure-arm: Running builder ...
+    azure-arm: Creating Azure Resource Manager (ARM) client ...
+    azure-arm: ARM Client successfully created
+==> azure-arm: Getting source image id for the deployment ...
+==> azure-arm:  -> SourceImageName: '/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/providers/Microsoft.Compute/locations/East US/publishers/Canonical/ArtifactTypes/vmimage/offers/UbuntuServer/skus/18.04-LTS/versions/latest'
+==> azure-arm: Creating resource group ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> Location          : 'East US'
+==> azure-arm:  -> Tags              :
+==> azure-arm:  ->> Owner : DevOps
+==> azure-arm:  ->> Environment : Development
+==> azure-arm: Validating deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> DeploymentName    : 'pkrdpn3zs1l679f'
+==> azure-arm: Deploying deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> DeploymentName    : 'pkrdpn3zs1l679f'
+==> azure-arm: Getting the VM's IP address ...
+==> azure-arm:  -> ResourceGroupName   : 'packer-temp-rg-20240717'
+==> azure-arm:  -> PublicIPAddressName : 'pkripn3zs1l679f'
+==> azure-arm:  -> NicName             : 'pkrnin3zs1l679f'
+==> azure-arm:  -> Network Connection  : 'PublicEndpoint'
+==> azure-arm:  -> IP Address          : '172.191.133.146'
+==> azure-arm: Waiting for SSH to become available...
+==> azure-arm: Connected to SSH!
+==> azure-arm: Provisioning with shell script: C:\Users\ADMINI~1\AppData\Local\Temp\1\packer-shell3025181897
+    azure-arm: Hit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease
+    azure-arm: Get:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease [102 kB]
+    azure-arm: Get:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease [102 kB]
+    azure-arm: Get:4 http://azure.archive.ubuntu.com/ubuntu bionic-security InRelease [102 kB]
+    azure-arm: Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+    azure-arm: Get:6 http://azure.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]
+    azure-arm: Get:7 http://azure.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+    azure-arm: Get:8 http://azure.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+    azure-arm: Get:9 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3044 kB]
+    azure-arm: Get:10 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [554 kB]
+    azure-arm: Get:11 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1914 kB]
+    azure-arm: Get:12 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [421 kB]
+    azure-arm: Get:13 http://azure.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [25.6 kB]
+    azure-arm: Get:14 http://azure.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [6088 B]
+    azure-arm: Get:15 http://azure.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [53.3 kB]
+    azure-arm: Get:16 http://azure.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [14.6 kB]
+    azure-arm: Get:17 http://azure.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [18.2 kB]
+    azure-arm: Get:18 http://azure.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [8668 B]
+    azure-arm: Get:19 http://azure.archive.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2717 kB]
+    azure-arm: Get:20 http://azure.archive.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1303 kB]
+    azure-arm: Get:21 http://azure.archive.ubuntu.com/ubuntu bionic-security/universe Translation-en [308 kB]
+    azure-arm: Get:22 http://azure.archive.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [19.8 kB]
+    azure-arm: Get:23 http://azure.archive.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [3928 B]
+    azure-arm: Fetched 24.5 MB in 6s (4211 kB/s)
+    azure-arm: Reading package lists...
+    azure-arm: Reading package lists...
+    azure-arm: Building dependency tree...
+    azure-arm: Reading state information...
+    azure-arm: python3 is already the newest version (3.6.7-1~18.04).
+    azure-arm: python3 set to manually installed.
+    azure-arm: 0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+    azure-arm: Hello, World!
+    azure-arm: [Unit]
+    azure-arm: Description=Python HTTP server
+    azure-arm: [Service]
+    azure-arm: ExecStart=/bin/bash -c "cd /var/www/html && exec /usr/bin/python3 -m http.server 80"
+    azure-arm: Restart=always
+    azure-arm: [Install]
+    azure-arm: WantedBy=multi-user.target
+==> azure-arm: Created symlink /etc/systemd/system/multi-user.target.wants/python-http-server.service → /etc/systemd/system/python-http-server.service.
+    azure-arm: Rules updated
+    azure-arm: Rules updated (v6)
+    azure-arm: Rules updated
+    azure-arm: Rules updated (v6)
+    azure-arm: Firewall is active and enabled on system startup
+==> azure-arm: Querying the machine's properties ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> ComputeName       : 'pkrvmn3zs1l679f'
+==> azure-arm:  -> Managed OS Disk   : '/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/packer-temp-rg-20240717/providers/Microsoft.Compute/disks/pkrosn3zs1l679f'
+==> azure-arm: Querying the machine's additional disks properties ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> ComputeName       : 'pkrvmn3zs1l679f'
+==> azure-arm: Powering off machine ...
+==> azure-arm:  -> ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> ComputeName       : 'pkrvmn3zs1l679f'
+==> azure-arm:  -> Compute ResourceGroupName : 'packer-temp-rg-20240717'
+==> azure-arm:  -> Compute Name              : 'pkrvmn3zs1l679f'
+==> azure-arm:  -> Compute Location          : 'East US'
+==> azure-arm: Generalizing machine ...
+==> azure-arm: Capturing image ...
+==> azure-arm:  -> Image ResourceGroupName   : 'myResourceGroup'
+==> azure-arm:  -> Image Name                : 'myPackerImage'
+==> azure-arm:  -> Image Location            : 'East US'
+==> azure-arm:
+==> azure-arm: Deleting Virtual Machine deployment and its attached resources...
+==> azure-arm: Deleted -> pkrvmn3zs1l679f : 'Microsoft.Compute/virtualMachines'
+==> azure-arm: Deleted -> pkrnin3zs1l679f : 'Microsoft.Network/networkInterfaces'
+==> azure-arm: Deleted -> pkrvnn3zs1l679f : 'Microsoft.Network/virtualNetworks'
+==> azure-arm: Deleted -> pkripn3zs1l679f : 'Microsoft.Network/publicIPAddresses'
+==> azure-arm: Deleted -> pkrsgn3zs1l679f : 'Microsoft.Network/networkSecurityGroups'
+==> azure-arm: Deleted -> Microsoft.Compute/disks : '/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/packer-temp-rg-20240717/providers/Microsoft.Compute/disks/pkrosn3zs1l679f'
+==> azure-arm: Removing the created Deployment object: 'pkrdpn3zs1l679f'
+==> azure-arm:
+==> azure-arm: Cleanup requested, deleting resource group ...
+==> azure-arm: Resource group has been deleted.
+Build 'azure-arm' finished after 4 minutes 13 seconds.
+
+==> Wait completed after 4 minutes 13 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> azure-arm: Azure.ResourceManagement.VMImage:
+
+OSType: Linux
+ManagedImageResourceGroupName: myResourceGroup
+ManagedImageName: myPackerImage
+ManagedImageId: /subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage
+ManagedImageLocation: East US

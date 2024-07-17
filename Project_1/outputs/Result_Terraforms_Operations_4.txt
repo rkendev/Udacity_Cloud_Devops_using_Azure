@@ -1,0 +1,469 @@
+ C:\Users\Administrator\Documents\Software\Cloud_CLIs\terraform\terraform plan -destroy -out="destroy.plan"
+null_resource.create_ssh_key: Refreshing state... [id=2488043831067881579]
+data.azurerm_resource_group.main: Reading...
+data.azurerm_image.existing_image: Reading...
+data.azurerm_image.existing_image: Read complete after 0s [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage]
+data.azurerm_resource_group.main: Read complete after 0s [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup]
+azurerm_virtual_network.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet]
+azurerm_public_ip.vm_ips[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1]
+azurerm_public_ip.lb: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/lb-public-ip]
+azurerm_public_ip.vm_ips[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-0]
+azurerm_network_security_group.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
+azurerm_subnet.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet]
+azurerm_lb.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer]
+azurerm_network_interface.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0]
+azurerm_network_interface.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1]
+azurerm_lb_backend_address_pool.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/backendAddressPools/myBackEndPool]
+azurerm_lb_probe.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/probes/httpProbe]
+azurerm_lb_nat_rule.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/inboundNatRules/myNatRule]
+azurerm_network_interface_security_group_association.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
+azurerm_network_interface_security_group_association.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
+azurerm_linux_virtual_machine.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-1]
+azurerm_linux_virtual_machine.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-0]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
+following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # azurerm_lb.main will be destroyed
+  - resource "azurerm_lb" "main" {
+      - id                   = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer" -> null
+      - location             = "eastus" -> null
+      - name                 = "myLoadBalancer" -> null
+      - private_ip_addresses = [] -> null
+      - resource_group_name  = "myResourceGroup" -> null
+      - sku                  = "Basic" -> null
+      - tags                 = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+        # (1 unchanged attribute hidden)
+
+      - frontend_ip_configuration {
+          - id                            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/frontendIPConfigurations/myFrontEndConfig" -> null
+          - inbound_nat_rules             = [
+              - "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/inboundNatRules/myNatRule",
+            ] -> null
+          - load_balancer_rules           = [] -> null
+          - name                          = "myFrontEndConfig" -> null
+          - outbound_rules                = [] -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - public_ip_address_id          = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/lb-public-ip" -> null
+          - zones                         = [] -> null
+            # (4 unchanged attributes hidden)
+        }
+    }
+
+  # azurerm_lb_backend_address_pool.main will be destroyed
+  - resource "azurerm_lb_backend_address_pool" "main" {
+      - backend_ip_configurations = [] -> null
+      - id                        = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/backendAddressPools/myBackEndPool" -> null
+      - load_balancing_rules      = [] -> null
+      - loadbalancer_id           = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer" -> null
+      - name                      = "myBackEndPool" -> null
+      - outbound_rules            = [] -> null
+      - resource_group_name       = "myResourceGroup" -> null
+    }
+
+  # azurerm_lb_nat_rule.main will be destroyed
+  - resource "azurerm_lb_nat_rule" "main" {
+      - backend_port                   = 80 -> null
+      - enable_floating_ip             = false -> null
+      - enable_tcp_reset               = false -> null
+      - frontend_ip_configuration_id   = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/frontendIPConfigurations/myFrontEndConfig" -> null
+      - frontend_ip_configuration_name = "myFrontEndConfig" -> null
+      - frontend_port                  = 80 -> null
+      - id                             = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/inboundNatRules/myNatRule" -> null
+      - idle_timeout_in_minutes        = 4 -> null
+      - loadbalancer_id                = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer" -> null
+      - name                           = "myNatRule" -> null
+      - protocol                       = "Tcp" -> null
+      - resource_group_name            = "myResourceGroup" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # azurerm_lb_probe.main will be destroyed
+  - resource "azurerm_lb_probe" "main" {
+      - id                  = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/probes/httpProbe" -> null
+      - interval_in_seconds = 5 -> null
+      - load_balancer_rules = [] -> null
+      - loadbalancer_id     = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer" -> null
+      - name                = "httpProbe" -> null
+      - number_of_probes    = 2 -> null
+      - port                = 80 -> null
+      - protocol            = "Http" -> null
+      - request_path        = "/" -> null
+      - resource_group_name = "myResourceGroup" -> null
+    }
+
+  # azurerm_linux_virtual_machine.main[0] will be destroyed
+  - resource "azurerm_linux_virtual_machine" "main" {
+      - admin_username                  = "azureuser" -> null
+      - allow_extension_operations      = true -> null
+      - computer_name                   = "myVM-0" -> null
+      - disable_password_authentication = true -> null
+      - encryption_at_host_enabled      = false -> null
+      - extensions_time_budget          = "PT1H30M" -> null
+      - id                              = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-0" -> null
+      - location                        = "eastus" -> null
+      - max_bid_price                   = -1 -> null
+      - name                            = "myVM-0" -> null
+      - network_interface_ids           = [
+          - "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0",
+        ] -> null
+      - platform_fault_domain           = -1 -> null
+      - priority                        = "Regular" -> null
+      - private_ip_address              = "10.0.1.4" -> null
+      - private_ip_addresses            = [
+          - "10.0.1.4",
+        ] -> null
+      - provision_vm_agent              = true -> null
+      - public_ip_address               = "40.71.68.56" -> null
+      - public_ip_addresses             = [
+          - "40.71.68.56",
+        ] -> null
+      - resource_group_name             = "myResourceGroup" -> null
+      - size                            = "Standard_B1s" -> null
+      - source_image_id                 = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage" -> null
+      - tags                            = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - virtual_machine_id              = "baa90960-b7e7-4e49-ac4c-0a1716ea8239" -> null
+        # (7 unchanged attributes hidden)
+
+      - admin_ssh_key {
+          - public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQeVi/oI5ClpwcaKyZvI4nRg/+o9cU+W5u7+aCIC3JLeMPgT2dTIuoTcUPwjNLU/6FL8+eI5fsa0JS+x9698qEXXptMWN/8OSqqaRlPt2wV5Kx7aoiaenzL23v3ha+dpZjYvGWxz+QsUvbmoQ65r7VT+xcN593VaLspMNBRtH7CIii5OSpjKJZOH1t5i3ylqrBlk9vT7APX/FrmtSeDfShZQzCtsPwluigV9elqwfr55CLAvTqi5bmAhInwzc/NH2ayZn4kUvE6batGa/Kuflu/KxSq0Vn319JNh+ZN46uNAbbXJVaO0Dj0z8dHgjJdf4sbj5kHYgUmoKgWupQi5IhraSnn9QFzcGeJH3XQhW5wNz8RROqDeB62eqmPfAHo/Rmmka6wfpu2Brq4pfoX5FxVFRiNQ/g0ZWkttF1eHWi0S3jXwz4nJAKqJCKfbTIlOBjxhfsM3E9RwtIAL2Mwg+QGUb1qKW2nntwTD8Hy2dVcENKjddtglM5ERMzeUgnqP3b0+woJxiSDcl1Ym2HytxJ8YPqrkALe5ZU+BQXzKn/RedJRER6vQi61ZtXu2vL/Rn2HgR2Cgx4xOVbIaLTWVvBy1NwjfJ4AbSxVcy5AnQns+nn3UG8lv8MD5P/oxqxUrjXOLmHBxjNfzEo/r/ch1oIPRMBbCFE6YNptcrfaDaFzw== administrator@WIN-5B9H5IV9439
+            EOT -> null
+          - username   = "azureuser" -> null
+        }
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 30 -> null
+          - name                      = "myVM-0_disk1_0f14a2f7f978415b96ae58adda3fb6ae" -> null
+          - storage_account_type      = "Standard_LRS" -> null
+          - write_accelerator_enabled = false -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # azurerm_linux_virtual_machine.main[1] will be destroyed
+  - resource "azurerm_linux_virtual_machine" "main" {
+      - admin_username                  = "azureuser" -> null
+      - allow_extension_operations      = true -> null
+      - computer_name                   = "myVM-1" -> null
+      - disable_password_authentication = true -> null
+      - encryption_at_host_enabled      = false -> null
+      - extensions_time_budget          = "PT1H30M" -> null
+      - id                              = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-1" -> null
+      - location                        = "eastus" -> null
+      - max_bid_price                   = -1 -> null
+      - name                            = "myVM-1" -> null
+      - network_interface_ids           = [
+          - "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1",
+        ] -> null
+      - platform_fault_domain           = -1 -> null
+      - priority                        = "Regular" -> null
+      - private_ip_address              = "10.0.1.5" -> null
+      - private_ip_addresses            = [
+          - "10.0.1.5",
+        ] -> null
+      - provision_vm_agent              = true -> null
+      - public_ip_address               = "40.71.78.52" -> null
+      - public_ip_addresses             = [
+          - "40.71.78.52",
+        ] -> null
+      - resource_group_name             = "myResourceGroup" -> null
+      - size                            = "Standard_B1s" -> null
+      - source_image_id                 = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage" -> null
+      - tags                            = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - virtual_machine_id              = "5d3e5655-907e-4996-ab33-5e91ce177318" -> null
+        # (7 unchanged attributes hidden)
+
+      - admin_ssh_key {
+          - public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQeVi/oI5ClpwcaKyZvI4nRg/+o9cU+W5u7+aCIC3JLeMPgT2dTIuoTcUPwjNLU/6FL8+eI5fsa0JS+x9698qEXXptMWN/8OSqqaRlPt2wV5Kx7aoiaenzL23v3ha+dpZjYvGWxz+QsUvbmoQ65r7VT+xcN593VaLspMNBRtH7CIii5OSpjKJZOH1t5i3ylqrBlk9vT7APX/FrmtSeDfShZQzCtsPwluigV9elqwfr55CLAvTqi5bmAhInwzc/NH2ayZn4kUvE6batGa/Kuflu/KxSq0Vn319JNh+ZN46uNAbbXJVaO0Dj0z8dHgjJdf4sbj5kHYgUmoKgWupQi5IhraSnn9QFzcGeJH3XQhW5wNz8RROqDeB62eqmPfAHo/Rmmka6wfpu2Brq4pfoX5FxVFRiNQ/g0ZWkttF1eHWi0S3jXwz4nJAKqJCKfbTIlOBjxhfsM3E9RwtIAL2Mwg+QGUb1qKW2nntwTD8Hy2dVcENKjddtglM5ERMzeUgnqP3b0+woJxiSDcl1Ym2HytxJ8YPqrkALe5ZU+BQXzKn/RedJRER6vQi61ZtXu2vL/Rn2HgR2Cgx4xOVbIaLTWVvBy1NwjfJ4AbSxVcy5AnQns+nn3UG8lv8MD5P/oxqxUrjXOLmHBxjNfzEo/r/ch1oIPRMBbCFE6YNptcrfaDaFzw== administrator@WIN-5B9H5IV9439
+            EOT -> null
+          - username   = "azureuser" -> null
+        }
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 30 -> null
+          - name                      = "myVM-1_disk1_dd8ae7ed5ea5434b987cd2793f65fdf8" -> null
+          - storage_account_type      = "Standard_LRS" -> null
+          - write_accelerator_enabled = false -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # azurerm_network_interface.main[0] will be destroyed
+  - resource "azurerm_network_interface" "main" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0" -> null
+      - internal_domain_name_suffix   = "dkqyqijcfjcudpg2tzkvqt41fg.bx.internal.cloudapp.net" -> null
+      - location                      = "eastus" -> null
+      - mac_address                   = "00-0D-3A-15-5A-F1" -> null
+      - name                          = "packer-nic-0" -> null
+      - private_ip_address            = "10.0.1.4" -> null
+      - private_ip_addresses          = [
+          - "10.0.1.4",
+        ] -> null
+      - resource_group_name           = "myResourceGroup" -> null
+      - tags                          = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - virtual_machine_id            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-0" -> null
+        # (1 unchanged attribute hidden)
+
+      - ip_configuration {
+          - name                          = "internal" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.0.1.4" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - public_ip_address_id          = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-0" -> null
+          - subnet_id                     = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet" -> null
+        }
+    }
+
+  # azurerm_network_interface.main[1] will be destroyed
+  - resource "azurerm_network_interface" "main" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1" -> null
+      - internal_domain_name_suffix   = "dkqyqijcfjcudpg2tzkvqt41fg.bx.internal.cloudapp.net" -> null
+      - location                      = "eastus" -> null
+      - mac_address                   = "00-22-48-34-DB-3A" -> null
+      - name                          = "packer-nic-1" -> null
+      - private_ip_address            = "10.0.1.5" -> null
+      - private_ip_addresses          = [
+          - "10.0.1.5",
+        ] -> null
+      - resource_group_name           = "myResourceGroup" -> null
+      - tags                          = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - virtual_machine_id            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-1" -> null
+        # (1 unchanged attribute hidden)
+
+      - ip_configuration {
+          - name                          = "internal" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.0.1.5" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - public_ip_address_id          = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1" -> null
+          - subnet_id                     = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet" -> null
+        }
+    }
+
+  # azurerm_network_interface_security_group_association.main[0] will be destroyed
+  - resource "azurerm_network_interface_security_group_association" "main" {
+      - id                        = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG" -> null
+      - network_interface_id      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0" -> null
+      - network_security_group_id = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG" -> null
+    }
+
+  # azurerm_network_interface_security_group_association.main[1] will be destroyed
+  - resource "azurerm_network_interface_security_group_association" "main" {
+      - id                        = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG" -> null
+      - network_interface_id      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1" -> null
+      - network_security_group_id = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG" -> null
+    }
+
+  # azurerm_network_security_group.main will be destroyed
+  - resource "azurerm_network_security_group" "main" {
+      - id                  = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG" -> null
+      - location            = "eastus" -> null
+      - name                = "myNSG" -> null
+      - resource_group_name = "myResourceGroup" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "22"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowSSH"
+              - priority                                   = 1001
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - access                                     = "Allow"
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "80"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowHTTP"
+              - priority                                   = 1002
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - access                                     = "Deny"
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "DenyAllInbound"
+              - priority                                   = 4096
+              - protocol                                   = "*"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - tags                = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+    }
+
+  # azurerm_public_ip.lb will be destroyed
+  - resource "azurerm_public_ip" "lb" {
+      - allocation_method       = "Dynamic" -> null
+      - id                      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/lb-public-ip" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "eastus" -> null
+      - name                    = "lb-public-ip" -> null
+      - resource_group_name     = "myResourceGroup" -> null
+      - sku                     = "Basic" -> null
+      - tags                    = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - zones                   = [] -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # azurerm_public_ip.vm_ips[0] will be destroyed
+  - resource "azurerm_public_ip" "vm_ips" {
+      - allocation_method       = "Dynamic" -> null
+      - id                      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-0" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_address              = "40.71.68.56" -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "eastus" -> null
+      - name                    = "vm-public-ip-0" -> null
+      - resource_group_name     = "myResourceGroup" -> null
+      - sku                     = "Basic" -> null
+      - tags                    = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - zones                   = [] -> null
+    }
+
+  # azurerm_public_ip.vm_ips[1] will be destroyed
+  - resource "azurerm_public_ip" "vm_ips" {
+      - allocation_method       = "Dynamic" -> null
+      - id                      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_address              = "40.71.78.52" -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "eastus" -> null
+      - name                    = "vm-public-ip-1" -> null
+      - resource_group_name     = "myResourceGroup" -> null
+      - sku                     = "Basic" -> null
+      - tags                    = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - zones                   = [] -> null
+    }
+
+  # azurerm_subnet.main will be destroyed
+  - resource "azurerm_subnet" "main" {
+      - address_prefix                                 = "10.0.1.0/24" -> null
+      - address_prefixes                               = [
+          - "10.0.1.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = false -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet" -> null
+      - name                                           = "mySubnet" -> null
+      - resource_group_name                            = "myResourceGroup" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "myVNet" -> null
+    }
+
+  # azurerm_virtual_network.main will be destroyed
+  - resource "azurerm_virtual_network" "main" {
+      - address_space         = [
+          - "10.0.0.0/16",
+        ] -> null
+      - dns_servers           = [] -> null
+      - guid                  = "2188a11a-2a22-4145-bcdc-9e55584fdb2e" -> null
+      - id                    = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet" -> null
+      - location              = "eastus" -> null
+      - name                  = "myVNet" -> null
+      - resource_group_name   = "myResourceGroup" -> null
+      - subnet                = [
+          - {
+              - address_prefix = "10.0.1.0/24"
+              - id             = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet"
+              - name           = "mySubnet"
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - tags                  = {
+          - "Environment" = "Development"
+          - "Owner"       = "DevOps"
+        } -> null
+      - vm_protection_enabled = false -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # null_resource.create_ssh_key will be destroyed
+  - resource "null_resource" "create_ssh_key" {
+      - id = "2488043831067881579" -> null
+    }
+
+Plan: 0 to add, 0 to change, 17 to destroy.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: destroy.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "destroy.plan"

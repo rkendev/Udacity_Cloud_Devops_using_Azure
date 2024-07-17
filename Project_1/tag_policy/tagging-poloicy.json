@@ -1,0 +1,25 @@
+{
+    "mode": "All",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "tags",
+            "exists": "false"
+          },
+          {
+            "field": "type",
+            "notIn": [
+              "Microsoft.Compute/disks",
+              "Microsoft.Compute/snapshots",
+              "Microsoft.Network/networkInterfaces"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "parameters": {}
+  }
