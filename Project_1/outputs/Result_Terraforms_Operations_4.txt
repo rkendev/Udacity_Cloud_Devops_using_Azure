@@ -1,14 +1,14 @@
- C:\Users\Administrator\Documents\Software\Cloud_CLIs\terraform\terraform plan -destroy -out="destroy.plan"
-null_resource.create_ssh_key: Refreshing state... [id=2488043831067881579]
-data.azurerm_resource_group.main: Reading...
+C:\Users\Administrator\Documents\Software\Cloud_CLIs\terraform\terraform plan -destroy -out="destroy.plan"
+null_resource.create_ssh_key: Refreshing state... [id=5962792588601729972]
 data.azurerm_image.existing_image: Reading...
-data.azurerm_image.existing_image: Read complete after 0s [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage]
+data.azurerm_resource_group.main: Reading...
 data.azurerm_resource_group.main: Read complete after 0s [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup]
-azurerm_virtual_network.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet]
-azurerm_public_ip.vm_ips[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1]
 azurerm_public_ip.lb: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/lb-public-ip]
+azurerm_virtual_network.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet]
 azurerm_public_ip.vm_ips[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-0]
+azurerm_public_ip.vm_ips[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1]
 azurerm_network_security_group.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
+data.azurerm_image.existing_image: Read complete after 0s [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myPackerImage]
 azurerm_subnet.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/mySubnet]
 azurerm_lb.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer]
 azurerm_network_interface.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0]
@@ -18,8 +18,8 @@ azurerm_lb_probe.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c
 azurerm_lb_nat_rule.main: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/inboundNatRules/myNatRule]
 azurerm_network_interface_security_group_association.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
 azurerm_network_interface_security_group_association.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1|/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG]
-azurerm_linux_virtual_machine.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-1]
 azurerm_linux_virtual_machine.main[0]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-0]
+azurerm_linux_virtual_machine.main[1]: Refreshing state... [id=/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM-1]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
 following symbols:
@@ -120,9 +120,9 @@ Terraform will perform the following actions:
           - "10.0.1.4",
         ] -> null
       - provision_vm_agent              = true -> null
-      - public_ip_address               = "40.71.68.56" -> null
+      - public_ip_address               = "13.82.45.115" -> null
       - public_ip_addresses             = [
-          - "40.71.68.56",
+          - "13.82.45.115",
         ] -> null
       - resource_group_name             = "myResourceGroup" -> null
       - size                            = "Standard_B1s" -> null
@@ -131,7 +131,7 @@ Terraform will perform the following actions:
           - "Environment" = "Development"
           - "Owner"       = "DevOps"
         } -> null
-      - virtual_machine_id              = "baa90960-b7e7-4e49-ac4c-0a1716ea8239" -> null
+      - virtual_machine_id              = "e9ba5081-6723-44b2-b8c8-51626b20ebd5" -> null
         # (7 unchanged attributes hidden)
 
       - admin_ssh_key {
@@ -144,7 +144,7 @@ Terraform will perform the following actions:
       - os_disk {
           - caching                   = "ReadWrite" -> null
           - disk_size_gb              = 30 -> null
-          - name                      = "myVM-0_disk1_0f14a2f7f978415b96ae58adda3fb6ae" -> null
+          - name                      = "myVM-0_disk1_b2829940423b4b66bebd78f8e78aad6d" -> null
           - storage_account_type      = "Standard_LRS" -> null
           - write_accelerator_enabled = false -> null
             # (1 unchanged attribute hidden)
@@ -173,9 +173,9 @@ Terraform will perform the following actions:
           - "10.0.1.5",
         ] -> null
       - provision_vm_agent              = true -> null
-      - public_ip_address               = "40.71.78.52" -> null
+      - public_ip_address               = "52.168.160.58" -> null
       - public_ip_addresses             = [
-          - "40.71.78.52",
+          - "52.168.160.58",
         ] -> null
       - resource_group_name             = "myResourceGroup" -> null
       - size                            = "Standard_B1s" -> null
@@ -184,7 +184,7 @@ Terraform will perform the following actions:
           - "Environment" = "Development"
           - "Owner"       = "DevOps"
         } -> null
-      - virtual_machine_id              = "5d3e5655-907e-4996-ab33-5e91ce177318" -> null
+      - virtual_machine_id              = "ab507c7e-7aca-4650-b505-2f3753556464" -> null
         # (7 unchanged attributes hidden)
 
       - admin_ssh_key {
@@ -197,7 +197,7 @@ Terraform will perform the following actions:
       - os_disk {
           - caching                   = "ReadWrite" -> null
           - disk_size_gb              = 30 -> null
-          - name                      = "myVM-1_disk1_dd8ae7ed5ea5434b987cd2793f65fdf8" -> null
+          - name                      = "myVM-1_disk1_7cebc65cfe4c45258df2daeeedc33e6c" -> null
           - storage_account_type      = "Standard_LRS" -> null
           - write_accelerator_enabled = false -> null
             # (1 unchanged attribute hidden)
@@ -211,9 +211,9 @@ Terraform will perform the following actions:
       - enable_accelerated_networking = false -> null
       - enable_ip_forwarding          = false -> null
       - id                            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-0" -> null
-      - internal_domain_name_suffix   = "dkqyqijcfjcudpg2tzkvqt41fg.bx.internal.cloudapp.net" -> null
+      - internal_domain_name_suffix   = "haddr331bs0eppmtupzoqtrr1f.bx.internal.cloudapp.net" -> null
       - location                      = "eastus" -> null
-      - mac_address                   = "00-0D-3A-15-5A-F1" -> null
+      - mac_address                   = "00-22-48-29-D7-EC" -> null
       - name                          = "packer-nic-0" -> null
       - private_ip_address            = "10.0.1.4" -> null
       - private_ip_addresses          = [
@@ -245,9 +245,9 @@ Terraform will perform the following actions:
       - enable_accelerated_networking = false -> null
       - enable_ip_forwarding          = false -> null
       - id                            = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/packer-nic-1" -> null
-      - internal_domain_name_suffix   = "dkqyqijcfjcudpg2tzkvqt41fg.bx.internal.cloudapp.net" -> null
+      - internal_domain_name_suffix   = "haddr331bs0eppmtupzoqtrr1f.bx.internal.cloudapp.net" -> null
       - location                      = "eastus" -> null
-      - mac_address                   = "00-22-48-34-DB-3A" -> null
+      - mac_address                   = "00-22-48-22-3F-78" -> null
       - name                          = "packer-nic-1" -> null
       - private_ip_address            = "10.0.1.5" -> null
       - private_ip_addresses          = [
@@ -330,6 +330,24 @@ Terraform will perform the following actions:
                 # (1 unchanged attribute hidden)
             },
           - {
+              - access                                     = "Allow"
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "80"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "AllowLoadBalancerHTTP"
+              - priority                                   = 1003
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "AzureLoadBalancer"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          - {
               - access                                     = "Deny"
               - destination_address_prefix                 = "*"
               - destination_address_prefixes               = []
@@ -378,7 +396,7 @@ Terraform will perform the following actions:
       - allocation_method       = "Dynamic" -> null
       - id                      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-0" -> null
       - idle_timeout_in_minutes = 4 -> null
-      - ip_address              = "40.71.68.56" -> null
+      - ip_address              = "13.82.45.115" -> null
       - ip_tags                 = {} -> null
       - ip_version              = "IPv4" -> null
       - location                = "eastus" -> null
@@ -397,7 +415,7 @@ Terraform will perform the following actions:
       - allocation_method       = "Dynamic" -> null
       - id                      = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/vm-public-ip-1" -> null
       - idle_timeout_in_minutes = 4 -> null
-      - ip_address              = "40.71.78.52" -> null
+      - ip_address              = "52.168.160.58" -> null
       - ip_tags                 = {} -> null
       - ip_version              = "IPv4" -> null
       - location                = "eastus" -> null
@@ -433,7 +451,7 @@ Terraform will perform the following actions:
           - "10.0.0.0/16",
         ] -> null
       - dns_servers           = [] -> null
-      - guid                  = "2188a11a-2a22-4145-bcdc-9e55584fdb2e" -> null
+      - guid                  = "f7380638-0cbb-47b4-bd93-a3f2e84e31dd" -> null
       - id                    = "/subscriptions/6fe6105a-78a2-472c-b075-5840c51586de/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNet" -> null
       - location              = "eastus" -> null
       - name                  = "myVNet" -> null
@@ -456,7 +474,7 @@ Terraform will perform the following actions:
 
   # null_resource.create_ssh_key will be destroyed
   - resource "null_resource" "create_ssh_key" {
-      - id = "2488043831067881579" -> null
+      - id = "5962792588601729972" -> null
     }
 
 Plan: 0 to add, 0 to change, 17 to destroy.
@@ -467,3 +485,4 @@ Saved the plan to: destroy.plan
 
 To perform exactly these actions, run the following command to apply:
     terraform apply "destroy.plan"
+Releasing state lock. This may take a few moments...
